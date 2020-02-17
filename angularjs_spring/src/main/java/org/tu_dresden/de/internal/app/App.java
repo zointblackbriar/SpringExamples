@@ -6,6 +6,7 @@ import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.Bean;
+import org.tu_dresden.de.internal.entities.User;
 
 /**
  * Hello world!
@@ -28,7 +29,7 @@ public class App
     			User user = new User(name, name.toLowerCase() + "@domain.com");
     		});
     		
-    	userRepository.findAll().forEach(System.out::println)
-    	}
+    	userRepository.findAll().forEach(System.out::println);
+    	};
     }
 }
