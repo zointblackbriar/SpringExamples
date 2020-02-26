@@ -15,9 +15,9 @@ public class ThreadManagement {
 	public Executor taskExecutor() {
 		logger.debug("Async task executor");
 		final ThreadPoolTaskExecutor executor = new ThreadPoolTaskExecutor();
-		executor.setCorePoolSize(2); //this  number should be dynamic in self-adaptive system -- run time dynamicity
+		executor.setCorePoolSize(2); //this  number should be dynamic in self-adaptive system -- run time dynamic system
 		executor.setMaxPoolSize(2); // runtime dynamic
-		executor.setQueueCapacity(100);
+		executor.setQueueCapacity(100);   
 		executor.setThreadNamePrefix("Data Thread");
 		executor.initialize();
 		return executor;

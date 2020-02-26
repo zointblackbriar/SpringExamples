@@ -19,7 +19,9 @@ public class App
     public static void main( String[] args )
     {
         System.out.println( "Hello World!" );
-        SpringApplication.run(App.class, args);
+        SpringApplication.run(App.class, args); // Convert this an ecommerce application
+        // we will simulate a self-adaptive microservice
+        // change worker threads and processes after heavy loading.
     }
     
 //    @Bean
