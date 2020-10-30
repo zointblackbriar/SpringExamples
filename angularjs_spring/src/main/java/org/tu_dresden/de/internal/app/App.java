@@ -7,6 +7,8 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.Bean;
 import org.tu_dresden.de.internal.entities.User;
+import org.tu_dresden.de.internal.service.ProductService;
+import org.tu_dresden.internal.app.datamodel.Product;
 
 /**
  * Hello world!
@@ -34,4 +36,14 @@ public class App
 //    	userRepository.findAll().forEach(System.out::println);
 //    	};
 //    }
+    
+    @Bean
+    CommandLineRunner runner(ProductService productService) {
+    	//input parameters - 3 Products are enough to show
+    	return args -> {
+    		productService.save(new Product(1L, "TV Set", 300.00, "http://placehold.it/200x100"));
+    		productService.save(new Product(2L, "Game Console", 400.00, "http://mediamarkt.de/100x100"));
+    		productService.save(new Product(3L, "Sofa", 500.00, "http://afw.com/20x20"));
+    	};
+    }
 }
