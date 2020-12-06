@@ -13,15 +13,16 @@ import javax.validation.ConstraintViolationException;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.RestControllerAdvice;
 
+
 import com.fasterxml.jackson.annotation.JsonInclude;
 
 
-
+@RestControllerAdvice
 public class ApiExceptionHandler {
 	
 	@SuppressWarnings("rawtypes")
 	@ExceptionHandler(ConstraintViolationException.class)
-	public ResponseEntity(<ErrorResponse> ResponseEntity handle(ConstraintViolationException e){
+	public ResponseEntity<ErrorResponse> handle(ConstraintViolationException e){
 		ErrorResponse errors = new ErrorResponse();
 		for (ConstraintViolation violation : e.getConstraintViolations()) {
 			ErrorItem error = new ErrorItem();
@@ -41,7 +42,7 @@ public class ApiExceptionHandler {
 		private String message;
 		
 		public String getCode() {
-			
+			return code;
 		}
 		
 		public void setCode(String code) {
