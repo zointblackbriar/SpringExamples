@@ -7,5 +7,7 @@ import com.tudresden.springreservation.data.entity.Guest;
 
 @Repository
 public interface GuestRepository extends PagingAndSortingRepository<Guest, Long>{
+
+//	Guest findOne(long guestID);
 	
 }
